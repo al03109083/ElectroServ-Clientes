@@ -2,103 +2,110 @@
 Sistema de registro de clientes - Proyecto Integrador
 ---
 
+Perfecto 👨‍💻 te actualicé el **README.md usando EXACTAMENTE tu plantilla**, pero adaptado a tu sistema real (Java + MySQL + Swing) y listo para pegar en tu repositorio.
+
+---
+
 # 🧾 Sistema de Registro de Clientes
 
-## 📌 Descripción
+## 👨‍💻 Autor
 
-Sistema desarrollado en Java que permite registrar, almacenar y visualizar clientes mediante una interfaz gráfica sencilla conectada a una base de datos MySQL.
+**Abraham Villalobos Almonte**
+
+---
+
+# 📌 Resumen ejecutivo
+
+## 📖 Descripción
+
+Este repositorio contiene la solución para el **Sistema de Registro de Clientes**.
+Su propósito es permitir a usuarios administrativos registrar, almacenar y consultar información de clientes de forma eficiente, segura y organizada.
 
 ---
 
 ## 🚨 Problema identificado
 
-La empresa *ElectroServ Solutions S.A. de C.V.* no cuenta con un sistema digital para gestionar clientes, lo que genera:
+Actualmente, el manejo manual de clientes provoca:
 
-* Pérdida de información
-* Duplicidad de registros
-* Dificultad para buscar clientes
-* Falta de organización
+* Retrasos en procesos operativos
+* Errores manuales
+* Falta de trazabilidad
+* Baja escalabilidad
 
 ---
 
 ## 💡 Solución
 
-Se desarrolló una aplicación que permite:
+La solución propuesta consiste en una aplicación de escritorio (monolito) que permite:
 
-* Registrar clientes
-* Guardar información en base de datos
-* Visualizar clientes en tabla
-* Validar datos básicos
+* Automatizar el registro de clientes
+* Centralizar la información en MySQL
+* Mejorar la organización de datos
+* Facilitar mantenimiento y uso
 
 ---
 
 ## 🏗️ Arquitectura
 
-```
-[Usuario]
-   ↓
-[Java Swing]
-   ↓
-[ClienteDAO]
-   ↓
-[Conexion]
-   ↓
-[MySQL]
-```
+La solución está compuesta por:
+
+* **Frontend:** Java Swing
+* **Backend / Lógica:** Java (DAO)
+* **Base de datos:** MySQL
+* **Infraestructura:** Ejecución local en NetBeans
 
 ---
 
-## 📚 Tabla de Contenidos
+# 📚 Tabla de contenidos
 
-* [Requerimientos](#-requerimientos)
-* [Instalación](#-instalación)
-* [Configuración](#-configuración)
-* [Uso](#-uso)
-* [Contribución](#-contribución)
-* [Roadmap](#-roadmap)
+* Resumen ejecutivo
+* Requerimientos
+* Instalación
+* Configuración
+* Uso
+* Contribución
+* Roadmap
 
 ---
 
-## ⚙️ Requerimientos
+# ⚙️ Requerimientos
 
-### Software
+## 🖥️ Infraestructura
 
-* Java JDK 17+
-* MySQL Server
+* Servidor de aplicación: No aplica (aplicación de escritorio)
+* Servidor web: No aplica
+* Base de datos: MySQL
+* Sistema operativo recomendado: Windows
+
+---
+
+## 💻 Software y dependencias
+
+* Java: 17+
 * Apache NetBeans
 * MySQL Workbench
-
-### Base de datos
-
-* MySQL
-* Base de datos: `clientes_db`
-
-### Dependencias
-
-* MySQL Connector/J
+* Git
 
 ---
 
-## 🛠️ Instalación
+## 📦 Paquetes adicionales
 
-### 1. Clonar repositorio
+* MySQL Connector/J (driver de base de datos)
+
+---
+
+# 🛠️ Instalación
+
+## 1. Clonar repositorio
 
 ```bash
-(https://github.com/al03109083/ElectroServ-Clientes.git)
+git clone https://github.com/TU_USUARIO/TU_REPOSITORIO.git
+cd TU_REPOSITORIO
 ```
 
 ---
 
-### 2. Abrir en NetBeans
-
-* File → Open Project
-* Seleccionar carpeta del proyecto
-
----
-
-### 3. Configurar base de datos
-
-Ejecutar en MySQL:
+## 2. Configurar base de datos
 
 ```sql
 CREATE DATABASE clientes_db;
@@ -116,9 +123,13 @@ CREATE TABLE clientes (
 
 ---
 
-### 4. Configurar conexión
+## 3. Configurar conexión
 
-Editar clase `Conexion.java`:
+Editar archivo:
+
+```java
+Conexion.java
+```
 
 ```java
 private static final String USER = "root";
@@ -127,133 +138,186 @@ private static final String PASS = "TU_PASSWORD";
 
 ---
 
-## ▶️ Ejecución
+## ▶️ Ejecutar ambiente de desarrollo
 
-* Ejecutar proyecto en NetBeans
-* Llenar formulario
-* Presionar botón **Guardar**
-
----
-
-## 🧪 Pruebas manuales
-
-1. Ingresar datos en formulario
-2. Guardar cliente
-3. Verificar que aparece en la tabla
-4. Validar en MySQL que el registro existe
+* Abrir proyecto en NetBeans
+* Ejecutar proyecto
 
 ---
 
-## ☁️ Despliegue (Local / Nube)
+# 🧪 Pruebas manuales
 
-### Local
+## Pruebas funcionales
+
+1. Iniciar la aplicación
+2. Ingresar datos en el formulario
+3. Presionar **Guardar**
+4. Validar:
+
+   * Registro en tabla
+   * Datos guardados en MySQL
+
+---
+
+## Pruebas automatizadas
+
+```bash
+mvn test
+```
+
+*(Opcional si usas Maven)*
+
+---
+
+# 🚀 Despliegue
+
+## Producción en ambiente local
 
 * Ejecutar desde NetBeans
 
-### Nube (opcional)
-
-* Puede desplegarse en plataformas como:
-
-  * Heroku (requiere adaptación a web)
-  * Railway / Render
-
 ---
 
-## ⚙️ Configuración
-
-### Archivo clave
-
-```java
-Conexion.java
-```
-
-Permite configurar:
-
-* URL de base de datos
-* Usuario
-* Contraseña
-
----
-
-## 👤 Uso
-
-### Usuario final
-
-* Ingresar datos del cliente
-* Presionar guardar
-* Visualizar lista de clientes
-
----
-
-### Administrador
-
-* Configurar conexión
-* Administrar base de datos
-* Validar registros
-
----
-
-## 🤝 Contribución
-
-### Pasos para contribuir
+## JAR
 
 ```bash
-# 1. Clonar repositorio
-https://github.com/al03109083/ElectroServ-Clientes.git
-
-# 2. Crear branch
-git checkout -b feature/nueva-funcionalidad
-
-# 3. Hacer cambios
-git add .
-git commit -m "Nueva funcionalidad"
-
-# 4. Subir cambios
-git push origin feature/nueva-funcionalidad
+java -jar SistemaClientes.jar
 ```
 
 ---
 
-### Pull Request
+## Docker (opcional)
 
-1. Ir a GitHub
-2. Crear Pull Request
-3. Revisar cambios
-4. Hacer merge
+```bash
+docker build -t sistema-clientes .
+docker run -p 8080:8080 sistema-clientes
+```
 
 ---
 
-## 🛣️ Roadmap
+# ⚙️ Configuración
 
-Futuras mejoras:
+## Archivos principales
+
+* Conexion.java
+
+---
+
+## Validaciones previas
+
+* Base de datos creada
+* Credenciales correctas
+* MySQL activo
+* Puerto disponible
+
+---
+
+# 👤 Uso
+
+## Usuario final
+
+El usuario puede:
+
+* Registrar clientes
+* Visualizar información
+* Gestionar datos básicos
+
+---
+
+## Administrador
+
+El administrador puede:
+
+* Configurar conexión a BD
+* Validar registros
+* Administrar base de datos
+
+---
+
+# 🤝 Contribución
+
+## 1. Clonar repositorio
+
+```bash
+git clone (https://github.com/al03109083/ElectroServ-Clientes.git)
+cd repositorio
+```
+
+---
+
+## 2. Crear nueva rama
+
+```bash
+git checkout -b feature/nombre-cambio
+```
+
+---
+
+## 3. Guardar cambios
+
+```bash
+git add .
+git commit -m "feat: descripción breve del cambio"
+```
+
+---
+
+## 4. Subir rama
+
+```bash
+git push origin feature/nombre-cambio
+```
+
+---
+
+## 5. Enviar Pull Request
+
+* Crear Pull Request hacia `develop`
+* Describir cambios
+* Adjuntar evidencia
+
+---
+
+## 6. Esperar revisión
+
+* Corregir observaciones
+* Hacer merge
+
+---
+
+# 🛣️ Roadmap
 
 * 🔍 Búsqueda de clientes
 * ✏️ Edición de registros
 * 🗑️ Eliminación de clientes
-* 🔐 Login de usuario
+* 🔐 Sistema de login
 * 🌐 Versión web
+* 📊 Reportes
+* 📧 Notificaciones
+* ⚙️ CI/CD
 
 ---
 
-## 📦 Producto
+# 📦 Producto
 
-* Proyecto Java (NetBeans)
+* Aplicación Java (NetBeans)
 * Base de datos MySQL
-* Archivo .JAR exportado
+* Archivo ejecutable .JAR
 
 ---
 
-## ✅ Estado del proyecto
+# ✅ Estado del proyecto
 
 ✔ Funcional
 ✔ Conectado a base de datos
-✔ Listo para uso básico
+✔ Listo para entrega
 
 ---
 
-## 👨‍💻 Autor
-
-Abraham Villalobos Almonten  Proyecto desarrollado con fines educativos.
+# 🚀 Proyecto listo
 
 ---
+
+(https://github.com/al03109083/ElectroServ-Clientes.git)
+```
+
 
